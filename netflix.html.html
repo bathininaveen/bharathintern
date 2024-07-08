@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HomePage of Netflix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<style>
+p{
+    --primary: #141414;
+    --light: #F3F3F3;
+    --dark: #686868;
+}
+
+html,
+body {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary);
+    color: var(--light);
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    line-height: 1.4;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    padding-top: 60px;
+}
+
+.wrapper {
+    margin: 0;
+    padding: 0;
+}
+
+/* HEADER */
+header {
+    padding: 20px 20px 0 20px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    background-color: var(--primary);
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+
+
+.netflixLogo {
+    /* grid-area: nt; */
+    object-fit: cover;
+    width: 100px;
+    max-height: 100%;
+
+    padding-left: 30px;
+    padding-top: 0px;
+}
+
+.netflixLogo img {
+    height: 35px;
+}
+
+#logo {
+    color: #E50914;
+    margin: 0;
+    padding: 0;
+}
+
+
+.main-nav {
+    /* grid-area: mn; */
+    padding: 0 30px 0 20px;
+}
+
+.main-nav a {
+    color: var(--light);
+    text-decoration: none;
+    margin: 5px;
+}
+
+.main-nav a:hover {
+    color: var(--dark);
+}
+
+.sub-nav {
+    /* grid-area: sb; */
+    padding: 0 40px 0 40px;
+}
+
+.sub-nav a {
+    color: var(--light);
+    text-decoration: none;
+    margin: 5px;
+}
+
+.sub-nav a:hover {
+    color: var(--dark);
+}
+
+/* Details Container */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.home-movie-details-container {
+    background-image: linear-gradient(180deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(24, 24, 24, 0.546875) 38.26%,
+            #131313 92.82%,
+            #131313 98.68%,
+            #131313 108.61%);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90vw;
+    padding-left: 10vw;
+    margin-top: 10vh;
+    padding-bottom: 5vh;
+}
+
+@media screen and (min-width: 768px) {
+    .home-movie-details-container {
+        margin-top: 18vh;
+        padding-left: 8vw;
+        padding-bottom: 6vh;
+    }
+}
+
+.home-movie-heading {
+    font-size: 38px;
+    font-weight: 500;
+    font-family: 'Roboto';
+    color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+    .home-movie-heading {
+        font-size: 48px;
+        font-weight: 600;
+    }
+}
+
+.home-movie-description {
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Roboto';
+    color: #ffffff;
+    height: 63px;
+    width: 296px;
+    margin-top: 0px;
+    overflow-x: auto;
+}
+
+@media screen and (min-width: 768px) {
+    .home-movie-description {
+        font-size: 20px;
+        height: 78px;
+        width: 632px;
+        margin-bottom: 22px;
+    }
+}
+
+.home-movie-play-button {
+    font-size: 12px;
+    font-family: 'Roboto';
+    font-weight: 500;
+    background-color: #ffffff;
+    color: #171f46;
+    border: none;
+    border-radius: 4px;
+    height: 40px;
+    width: 74px;
+}
+
+.movies-list-heading {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Roboto';
+    padding-left: 10vw;
+}
+
+@media screen and (min-width: 768px) {
+    .movies-list-heading {
+        font-size: 32px;
+        padding-left: 8vw;
+    }
+}
+
+
+.netflixLogo {
+    /* grid-area: nt; */
+    object-fit: cover;
+    width: 100px;
+    max-height: 100%;
+
+    padding-left: 30px;
+    padding-top: 0px;
+}
+
+.netflixLogo img {
+    height: 35px;
+}
+
+#logo {
+    color: #E50914;
+    margin: 0;
+    padding: 0;
+}
+
+
+.main-nav {
+    /* grid-area: mn; */
+    padding: 0 30px 0 20px;
+}
+
+.main-nav a {
+    color: var(--light);
+    text-decoration: none;
+    margin: 5px;
+}
+
+.main-nav a:hover {
+    color: var(--dark);
+}
+
+.sub-nav {
+    /* grid-area: sb; */
+    padding: 0 40px 0 40px;
+}
+
+.sub-nav a {
+    color: var(--light);
+    text-decoration: none;
+    margin: 5px;
+}
+
+.sub-nav a:hover {
+    color: var(--dark);
+}
+
+
+/* MAIN CONTIANER */
+.main-container {
+    padding: 50px;
+}
+
+.box {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(6, minmax(100px, 1fr));
+}
+
+.box a {
+    transition: transform .3s;
+}
+
+.box a:hover {
+    transition: transform .3s;
+    -ms-transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+}
+
+.box img {
+    border-radius: 2px;
+}
+
+/* MEDIA QUERIES */
+
+@media(max-width: 900px) {
+
+    header {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "nt nt nt  .  .  . sb . . . "
+            "mn mn mn mn mn mn  mn mn mn mn";
+    }
+
+    .box {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(4, minmax(100px, 1fr));
+    }
+
+}
+
+@media(max-width: 700px) {
+
+    header {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "nt nt nt  .  .  . sb . . . "
+            "mn mn mn mn mn mn  mn mn mn mn";
+    }
+
+    .box {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+    }
+
+    .sub-links ul {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media(max-width: 500px) {
+
+    .wrapper {
+        font-size: 15px;
+    }
+
+    header {
+        margin: 0;
+        padding: 20px 0 0 0;
+        position: static;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:
+            "nt"
+            "mn"
+            "sb";
+        text-align: center;
+    }
+
+    .netflixLogo {
+        max-width: 100%;
+        margin: auto;
+        padding-right: 20px;
+    }
+
+    .main-nav {
+        display: grid;
+        grid-gap: 0px;
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .box {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+    }
+
+    .box a:hover {
+        transition: transform .3s;
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1.2);
+    }
+
+    .sub-links ul {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+        font-size: 15px;
+    }
+}
+
+/* FOOTER */
+footer {
+    padding: 20px;
+    text-align: center;
+    color: var(--dark);
+    margin: 10px;
+}
+
+.logos a {
+    padding: 10px;
+}
+
+.logo {
+    color: var(--dark);
+}
+</style>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="wrapper">
+        <header>
+            <div class="netflixLogo">
+                <a id="logo" href="#home"><img src="data:image/jpeg;base64,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" alt="logoimage" /></a>
+            </div>
+            <nav class="main-nav">
+                <a href="#home">Home</a>
+                <a href="#tvShows">TV Shows</a>
+                <a href="#movies">Movies</a>
+                <a href="#originals">Originals</a>
+                <a href="#">Recently Added</a>
+            </nav>
+            <nav class="sub-nav">
+                <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
+                <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
+                <a href="#">Account</a>
+            </nav>
+        </header>
+    </div>
+    <!-- END OF HEADER -->
+
+    <!-- DISPLAY -->
+    <div class="home-container" style="background-image: url('https://assets.ccbp.in/frontend/react-js/movies-app/avatar-theatrical-movie-background-v0.png'); background-size: cover; height: 52vh; background-repeat: no-repeat;">
+        <div class="home-movie-details-container">
+            <h1 class="home-movie-heading">Avatar</h1>
+            <p class="home-movie-description">Avatar is a 2009 American epic science fiction film directed, written, produced, and co-edited by James Cameron</p>
+            <button type="button" class="home-movie-play-button">
+                Play
+            </button>
+        </div>
+    </div>
+
+    <!-- END OF DISPLAY -->
+
+    <!-- MAIN CONTAINER -->
+    <section class="main-container">
+        <div class="location" id="home">
+            <h1 id="home">Popular on Movies App</h1>
+            <div class="box">
+                <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/no-time-to-die-movie-poster.png" alt="" /></a>
+                <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/shang-chi-and-the-legend-of-the-ten-rings-movie-poster.png" alt="" /></a>
+                <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/dune-movie-poster.png" alt="" /></a>
+                <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/the-suicide-squad-movie-poster.png" alt="" /></a>
+                <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/venom-let-there-be-carnage-movie-poster.png" alt="" /></a>
+                <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/eternals-movie-poster.png" alt="" /></a>
+
+                <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/army-of-thieves-movie-poster.png" alt="" /></a>
+                <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/the-harder-they-fall-movie-poster.png" alt="" /></a>
+                <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/halloween-kills-movie-poster.png" alt="" /></a>
+                <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/twilight-movie-poster.png" alt="" /></a>
+                <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/squid-game-south-korean-movie-poster.png" alt="" /></a>
+                <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/the-pursuit-of-happyness-movie-poster.png" alt="" /></a>
+            </div>
+        </div>
+
+        <h1 id="myList">Trending Now</h1>
+        <div class="box">
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/grindhouse-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/clifford-the-big-red-dog-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/titanic-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/avatar-theatrical-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/a-few-good-men-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/king-richard-movie-poster.png" alt="" /></a>
+        </div>
+
+        <h1 id="tvShows">TV Shows</h1>
+        <div class="box">
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/dexter-new-blood-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/riverdale-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/the-boss-baby-family-business-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/the-protege-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/godzilla-vs-kong-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/demonic-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/cosmic-sin-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/infinite-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/zack-snyders-justice-league-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/the-tomorrow-war-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/the-vault-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/mortal-kombat-international-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/spider-man-advance-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/gunpowder-milkshake-british-movie-poster.png" alt="" /></a>
+        </div>
+
+        <h1 id="originals">Originals</h1>
+        <div class="box">
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/spider-man-far-from-home-international-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/venom-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/snake-eyes-gi-joe-origins-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/the-addams-family-2-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/luca-movie-poster.png" alt="" /></a>
+            <a href=""><img src="https://assets.ccbp.in/frontend/react-js/movies-app/the-amazing-spider-man-movie-poster.png" alt="" /></a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="logos">
+            <a href="#"><i class="fab fa-facebook-square fa-2x logo"></i></a>
+            <a href="#"><i class="fab fa-instagram fa-2x logo"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x logo"></i></a>
+            <a href="#"><i class="fab fa-youtube fa-2x logo"></i></a>
+        </div>
+        <p>Contact US</p>
+        <p>Help center</p>
+    </footer>
+
+</body>
+
+</html>
